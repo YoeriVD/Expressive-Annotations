@@ -1,12 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExpressiveAttributes
 {
-	class AhaMomentAttribute
+	[AttributeUsage(AttributeTargets.All, Inherited = false)]
+	public class AhaMomentAttribute : Attribute
 	{
+		public enum Where
+		{
+			TrafficJam,
+			Toilet,
+			Shower
+		}
+
+		private readonly Where _where;
+
+		public AhaMomentAttribute(Where where)
+		{
+			_where = @where;
+		}
 	}
 }
