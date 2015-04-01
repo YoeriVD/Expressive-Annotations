@@ -3,7 +3,7 @@
 namespace ExpressiveAttributes
 {
 	[AttributeUsage(AttributeTargets.All, Inherited = false)]
-    public class Magic : Attribute
+    public class MagicAttribute : Attribute
     {
     }
 }
