@@ -2,13 +2,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
 		<id>ExpressiveAttributes</id>
-		<version>1.0.1</version>
+		<version>1.0.10</version>
 		<authors>YoeriD</authors>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<description>My package description.</description>
+		<description>A class library containing a collection of funny and/or usefull attributes to brighten up every developers code. Why use '//' when you can write [Magic] or [BossMadeMeDoIt]?</description>
+		<projectUrl>http://github.com/YoeriVD/Expressive-Attributes</projectUrl>
+		<tags>funny attributes google annotations meta</tags>
 	</metadata>
 	<files>
 		<file src="bin\Debug\*.dll" target="lib" />
-		<file src="bin\Debug\*.pdb" target="lib" />
 	</files>
 </package>
