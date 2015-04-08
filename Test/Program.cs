@@ -9,6 +9,8 @@ namespace Test
 		{
 		}
 	}
+
+	[LegacySucks()]
 	[BossMadeMeDoIt]
 	[BossMadeMeDoIt("random comment")]
 	[AhaMoment(Where.Shower)]

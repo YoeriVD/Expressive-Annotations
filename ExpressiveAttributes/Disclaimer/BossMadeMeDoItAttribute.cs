@@ -6,12 +6,8 @@ namespace ExpressiveAttributes.Disclaimer
 	public class BossMadeMeDoItAttribute : Attribute
 	{
 		public string Comment { get; set; }
-
-		public BossMadeMeDoItAttribute()
-		{
-		}
-
-		public BossMadeMeDoItAttribute(string comment)
+		
+		public BossMadeMeDoItAttribute(string comment = "")
 		{
 			Comment = comment;
 		}
