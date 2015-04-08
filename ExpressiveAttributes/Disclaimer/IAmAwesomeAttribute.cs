@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 
 namespace ExpressiveAttributes
 {
 	[AttributeUsage(AttributeTargets.All, Inherited = false)]
-	public class LegacySucksAttribute : Attribute
+	public class IAmAwesomeAttribute : Attribute
 	{
 		public string Comment { get; set; }
 
-		public LegacySucksAttribute(string comment = "")
+		public IAmAwesomeAttribute(string comment = "")
 		{
 			Comment = comment;
 		}

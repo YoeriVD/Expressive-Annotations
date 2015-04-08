@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpressiveAttributes.Disclaimer
+namespace ExpressiveAttributes
 {
 	[AttributeUsage(AttributeTargets.All, Inherited = false)]
 	public class HandsOffAttribute : Attribute

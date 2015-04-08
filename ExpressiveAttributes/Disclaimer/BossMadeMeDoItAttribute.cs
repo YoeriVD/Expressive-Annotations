@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpressiveAttributes.Disclaimer
+namespace ExpressiveAttributes
 {
 	[AttributeUsage(AttributeTargets.All, Inherited = false, AllowMultiple = true)]
 	public class BossMadeMeDoItAttribute : Attribute

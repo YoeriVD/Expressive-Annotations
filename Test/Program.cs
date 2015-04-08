@@ -9,7 +9,7 @@ namespace Test
 		{
 		}
 	}
-
+	[IAmAwesome()]
 	[LegacySucks()]
 	[BossMadeMeDoIt]
 	[BossMadeMeDoIt("random comment")]

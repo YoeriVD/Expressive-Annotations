@@ -41,6 +41,7 @@
     <Compile Include="Disclaimer\AhaMomentAttribute.cs" />
     <Compile Include="Disclaimer\BossMadeMeDoItAttribute.cs" />
     <Compile Include="Disclaimer\HandsOffAttribute.cs" />
+    <Compile Include="Disclaimer\IAmAwesomeAttribute.cs" />
     <Compile Include="Disclaimer\LegacySucksAttribute.cs" />
     <Compile Include="Enumeration\Consequence.cs" />
     <Compile Include="Enumeration\Where.cs" />
