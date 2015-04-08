@@ -9,6 +9,7 @@ namespace Test
 		{
 		}
 	}
+	[BossMadeMeDoIt]
 	[BossMadeMeDoIt("random comment")]
 	[AhaMoment(Where.Shower)]
 	[HandsOff(ByOrderOf = "the cheff", OnPainOf = Consequence.PaperCut)]
