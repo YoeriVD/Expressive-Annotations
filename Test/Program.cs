@@ -1,5 +1,4 @@
 ﻿using ExpressiveAttributes;
-using ExpressiveAttributes.Disclaimer;
 
 namespace Test
 {
