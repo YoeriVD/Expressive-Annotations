@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Reflection;
 using Autofac;
 using Autofac.Extras.DynamicProxy2;
 using ExpressiveAttributes;
@@ -12,13 +14,7 @@ namespace Test
         private static void Main(string[] args)
         {
             var cb = new ContainerBuilder();
-            cb.RegisterType<InterceptorTests>()
-                .AsSelf()
-                .EnableClassInterceptors()
-                .InterceptedBy(typeof (AutofacInterceptor));
-
             cb.EnableAttributeInterceptors();
-            //cb.Register(c => new InterceptorTests());
             var container = cb.Build();
             using (var scope = container.BeginLifetimeScope())
             {
