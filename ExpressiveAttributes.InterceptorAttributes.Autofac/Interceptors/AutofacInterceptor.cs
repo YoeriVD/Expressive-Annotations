@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using Castle.Core.Internal;
 using Castle.DynamicProxy;
 
 namespace ExpressiveAttributes.Autofac.Interceptors
@@ -14,12 +13,17 @@ namespace ExpressiveAttributes.Autofac.Interceptors
         {
             var customAttributes = invocation.Method.GetCustomAttributes(true).OfType<Attribute>();
 
-            customAttributes
-                .ForEach(
+            var reports = customAttributes
+                .Select(
                     attribute =>
                         handlers
                             .Where(handler => handler.IsSuitedFor(attribute))
-                            .ForEach(handler => handler.DoMagic(invocation)));
+                            .Select(handler => handler.DoMagic(invocation).CanIContinue()));
+
+            if (reports
+                .SelectMany(report => report.Select(canProceed => canProceed))
+                .All(canProceed => canProceed))
+                invocation.Proceed();
         }
     }
 }

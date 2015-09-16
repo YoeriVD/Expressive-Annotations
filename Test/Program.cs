@@ -1,43 +1,53 @@
 ﻿using System;
 using Autofac;
+using Autofac.Extras.DynamicProxy2;
 using ExpressiveAttributes;
 using ExpressiveAttributes.Autofac;
+using ExpressiveAttributes.Autofac.Interceptors;
 
 namespace Test
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-		    var cb = new ContainerBuilder();
-		    cb.EnableAttributeInterceptors();
-		    cb.Register(c => new InterceptorTests());
-		    var container = cb.Build();
-		    using (var scope = container.BeginLifetimeScope())
-		    {
-		        var interceptorTest = scope.Resolve<InterceptorTests>();
-                interceptorTest.CantTouchThisTest();
-		    }
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            var cb = new ContainerBuilder();
+            cb.RegisterType<InterceptorTests>()
+                .AsSelf()
+                .EnableClassInterceptors()
+                .InterceptedBy(typeof (AutofacInterceptor));
 
-		    Console.ReadKey();
-		}
-	}
-	[IAmAwesome()]
-	[LegacySucks()]
-	[BossMadeMeDoIt]
-	[BossMadeMeDoIt("random comment")]
-	[AhaMoment(Where.Shower)]
-	[HandsOff(ByOrderOf = "the cheff", OnPainOf = Consequence.PaperCut)]
+            cb.EnableAttributeInterceptors();
+            //cb.Register(c => new InterceptorTests());
+            var container = cb.Build();
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var interceptorTest = scope.Resolve<InterceptorTests>();
+                interceptorTest.CantTouchThisTest();
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+    [IAmAwesome]
+    [LegacySucks]
+    [BossMadeMeDoIt]
+    [BossMadeMeDoIt("random comment")]
+    [AhaMoment(Where.Shower)]
+    [HandsOff(ByOrderOf = "the cheff", OnPainOf = Consequence.PaperCut)]
     [CantTouchThis(Stop.Hammertime)]
-    class Dummy {}
+    internal class Dummy
+    {
+    }
 
     [EnableAttributeInterceptors]
-    class InterceptorTests
+    internal class InterceptorTests
     {
         [CantTouchThis(Stop.Hammertime)]
-        public void CantTouchThisTest()
+        public virtual void CantTouchThisTest()
         {
-            Console.WriteLine("FAIL");
+            Console.WriteLine("CantTouchThisTest FAILED");
         }
     }
 }

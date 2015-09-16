@@ -10,11 +10,13 @@ namespace ExpressiveAttributes.Autofac
     {
         public static ContainerBuilder EnableAttributeInterceptors(this ContainerBuilder builder)
         {
-            builder
-                .RegisterAssemblyTypes(Assembly.GetCallingAssembly())
-                .Where(t => t.GetCustomAttributes().OfType<EnableAttributeInterceptorsAttribute>().Any())
-                .EnableClassInterceptors()
-                .InterceptedBy(typeof(AutofacInterceptor));
+//            builder
+//                .RegisterAssemblyTypes(Assembly.GetCallingAssembly())
+//                .AsSelf()
+//                .Where(t => t.GetCustomAttributes().OfType<EnableAttributeInterceptorsAttribute>().Any())
+//                .EnableClassInterceptors()
+//                .InterceptedBy(typeof(AutofacInterceptor));
+
 
             builder.Register(c => new AutofacInterceptor());
             return builder;
