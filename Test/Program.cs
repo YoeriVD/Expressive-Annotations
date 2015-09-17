@@ -28,7 +28,6 @@ namespace Test
     [BossMadeMeDoIt("random comment")]
     [AhaMoment(Where.Shower)]
     [HandsOff(ByOrderOf = "the cheff", OnPainOf = Consequence.PaperCut)]
-    [CantTouchThis(Stop.Hammertime)]
     internal class Dummy
     {
     }
