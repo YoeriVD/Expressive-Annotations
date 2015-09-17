@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using Castle.DynamicProxy;
+using System.Reflection;
 
-namespace ExpressiveAttributes.Autofac.Interceptors
+namespace ExpressiveAttributes.Interceptors
 {
-    internal class CantTouchThisHandler : ICanHandleACustomAttribute
+    public class CantTouchThisHandler : ICanHandleACustomAttribute
     {
         private CantTouchThisAttribute _attribute;
 
@@ -15,7 +15,7 @@ namespace ExpressiveAttributes.Autofac.Interceptors
             return _attribute != null;
         }
 
-        public ICanHandleACustomAttribute DoMagic(IInvocation invocation)
+        public ICanHandleACustomAttribute DoMagic(MethodInfo invocation)
         {
             var stop = _attribute.Stop;
             var message = $"Stop, {stop}!";

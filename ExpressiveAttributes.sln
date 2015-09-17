@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressiveAttributes.Interc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressiveAttributes.InterceptorAttributes.Autofac", "ExpressiveAttributes.InterceptorAttributes.Autofac\ExpressiveAttributes.InterceptorAttributes.Autofac.csproj", "{BCF43986-569F-449D-9FD7-CED0FBBA4D78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressiveAttributes.InterceptorAttributes.Castle", "ExpressiveAttributes.InterceptorAttributes.Castle\ExpressiveAttributes.InterceptorAttributes.Castle.csproj", "{D1788FDD-756D-4618-B254-3496E770DB95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BCF43986-569F-449D-9FD7-CED0FBBA4D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCF43986-569F-449D-9FD7-CED0FBBA4D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCF43986-569F-449D-9FD7-CED0FBBA4D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1788FDD-756D-4618-B254-3496E770DB95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1788FDD-756D-4618-B254-3496E770DB95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1788FDD-756D-4618-B254-3496E770DB95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1788FDD-756D-4618-B254-3496E770DB95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

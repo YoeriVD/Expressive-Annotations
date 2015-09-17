@@ -5,7 +5,6 @@ using Autofac;
 using Autofac.Extras.DynamicProxy2;
 using ExpressiveAttributes;
 using ExpressiveAttributes.Autofac;
-using ExpressiveAttributes.Autofac.Interceptors;
 
 namespace Test
 {
@@ -36,8 +35,7 @@ namespace Test
     internal class Dummy
     {
     }
-
-    [EnableAttributeInterceptors]
+    
     internal class InterceptorTests
     {
         [CantTouchThis(Stop.Hammertime)]

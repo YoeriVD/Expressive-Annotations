@@ -2,9 +2,9 @@
 using System.Linq;
 using Castle.DynamicProxy;
 
-namespace ExpressiveAttributes.Autofac.Interceptors
+namespace ExpressiveAttributes.Interceptors
 {
-    public class AutofacInterceptor : IInterceptor
+    public class CastleInterceptor : IInterceptor
     {
         private readonly ICanHandleACustomAttribute[] handlers = {new CantTouchThisHandler()};
 
@@ -18,7 +18,7 @@ namespace ExpressiveAttributes.Autofac.Interceptors
                     attribute =>
                         handlers
                             .Where(handler => handler.IsSuitedFor(attribute))
-                            .Select(handler => handler.DoMagic(invocation).CanIContinue()));
+                            .Select(handler => handler.DoMagic(invocation.Method).CanIContinue()));
 
             if (reports
                 .SelectMany(report => report.Select(canProceed => canProceed))

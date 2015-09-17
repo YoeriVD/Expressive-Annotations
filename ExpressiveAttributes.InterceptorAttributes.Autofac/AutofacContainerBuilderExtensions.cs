@@ -2,7 +2,7 @@
 using System.Reflection;
 using Autofac;
 using Autofac.Extras.DynamicProxy2;
-using ExpressiveAttributes.Autofac.Interceptors;
+using ExpressiveAttributes.Interceptors;
 
 namespace ExpressiveAttributes.Autofac
 {
@@ -13,12 +13,11 @@ namespace ExpressiveAttributes.Autofac
             builder
                 .RegisterAssemblyTypes(Assembly.GetCallingAssembly())
                 .AsSelf()
-                .Where(t => t.GetCustomAttributes().OfType<EnableAttributeInterceptorsAttribute>().Any())
                 .EnableClassInterceptors()
-                .InterceptedBy(typeof(AutofacInterceptor));
+                .InterceptedBy(typeof(CastleInterceptor));
 
 
-            builder.Register(c => new AutofacInterceptor());
+            builder.Register(c => new CastleInterceptor());
             return builder;
         }
     }

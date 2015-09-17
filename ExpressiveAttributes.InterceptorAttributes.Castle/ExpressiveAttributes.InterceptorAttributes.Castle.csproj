@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCF43986-569F-449D-9FD7-CED0FBBA4D78}</ProjectGuid>
+    <ProjectGuid>{D1788FDD-756D-4618-B254-3496E770DB95}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExpressiveAttributes.Autofac</RootNamespace>
-    <AssemblyName>ExpressiveAttributes.InterceptorAttributes.Autofac</AssemblyName>
+    <RootNamespace>ExpressiveAttributes.Castle</RootNamespace>
+    <AssemblyName>ExpressiveAttributes.InterceptorAttributes.Castle</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,14 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Autofac.Extras.DynamicProxy2, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.Extras.DynamicProxy2.3.0.7\lib\net40\Autofac.Extras.DynamicProxy2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
@@ -52,19 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutofacContainerBuilderExtensions.cs" />
+    <Compile Include="Interceptors\CastleInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExpressiveAttributes.InterceptorAttributes.Castle\ExpressiveAttributes.InterceptorAttributes.Castle.csproj">
-      <Project>{D1788FDD-756D-4618-B254-3496E770DB95}</Project>
-      <Name>ExpressiveAttributes.InterceptorAttributes.Castle</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ExpressiveAttributes.InterceptorAttributes\ExpressiveAttributes.InterceptorAttributes.csproj">
-      <Project>{C6303C97-1C4C-40EF-9644-8948BD4A57CF}</Project>
+      <Project>{c6303c97-1c4c-40ef-9644-8948bd4a57cf}</Project>
       <Name>ExpressiveAttributes.InterceptorAttributes</Name>
     </ProjectReference>
   </ItemGroup>
