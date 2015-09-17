@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Reflection;
 using Autofac;
-using Autofac.Extras.DynamicProxy2;
 using ExpressiveAttributes;
 using ExpressiveAttributes.Autofac;
 
@@ -35,7 +32,7 @@ namespace Test
     internal class Dummy
     {
     }
-    
+
     internal class InterceptorTests
     {
         [CantTouchThis(Stop.Hammertime)]
